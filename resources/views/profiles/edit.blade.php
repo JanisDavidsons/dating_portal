@@ -1,77 +1,93 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <form action="/profile/{{$user->id}}" enctype="multipart/form-data" method="post">
-            @csrf
-            @method('PATCH')
+<div class="container">
+    <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
+        @csrf
+        @method('PATCH')
 
-            <div class="row">
-                <div class="col-8 offset-2">
-                    <div class="row"><h1>Edit profile</h1></div>
+        <div class="row">
+            <div class="col-8 offset-2">
 
-                    <div class="form-group row">
-                        <label for="title" class="col-md-4 col-form-label ">Title</label>
+                <div class="row">
+                    <h1>Edit Profile</h1>
+                </div>
+                <div class="form-group row">
+                    <label for="title" class="col-md-4 col-form-label">Title</label>
 
-                        <input id="title"
-                               type="text"
-                               class="form-control @error('title') is-invalid @enderror" name="title"
-                               value="{{ old('title') ?? $user->profile->title }}"
-                               autocomplete="title">
+                    <input id="title"
+                           type="text"
+                           class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}"
+                           name="title"
+                           value="{{ old('title') ?? $user->profile->title }}"
+                           autocomplete="title" autofocus>
 
-                        @error('title')
+                    @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                            <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
+                </div>
 
-                    <div class="form-group row">
-                        <label for="description" class="col-md-4 col-form-label ">Description</label>
+                <div class="form-group row">
+                    <label for="description" class="col-md-4 col-form-label">Description</label>
 
-                        <input id="description"
-                               type="text"
-                               class="form-control @error('description') is-invalid @enderror" name="description"
-                               value="{{ old('description') ?? $user->profile->description }}"
-                               autocomplete="description">
+                    <input id="description"
+                           type="text"
+                           class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                           name="description"
+                           value="{{ old('description') ?? $user->profile->description }}"
+                           autocomplete="description" autofocus>
 
-                        @error('description')
+                    @if ($errors->has('description'))
                         <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                            <strong>{{ $errors->first('description') }}</strong>
+                        </span>
+                    @endif
+                </div>
 
-                    <div class="form-group row">
-                        <label for="url" class="col-md-4 col-form-label ">URL</label>
+                <div class="form-group row">
+                    <label for="url" class="col-md-4 col-form-label">URL</label>
 
-                        <input id="url"
-                               type="te"
-                               class="form-control @error('url') is-invalid @enderror" name="url"
-                               value="{{ old('url') ?? $user->profile->url}}"
-                               autocomplete="url">
+                    <input id="url"
+                           type="text"
+                           class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}"
+                           name="url"
+                           value="{{ old('url') ?? $user->profile->url }}"
+                           autocomplete="url" autofocus>
 
-                        @error('url')
+                    @if ($errors->has('url'))
                         <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                            <strong>{{ $errors->first('url') }}</strong>
+                        </span>
+                    @endif
+                </div>
 
-                    <div class="row">
-                        <label for="image" class="col-md-4 col-form-label ">Profile Image</label>
-                        <input type="file" class="form-control-file" id="image" name="image">
+                <div class="row">
+                    <label for="image" class="col-md-4 col-form-label">Profile Image</label>
 
-                        @error('image')
-                        <strong>{{ $message }}</strong>
-                        @enderror
-                    </div>
+                    <input type="file" class="form-control-file" id="image" name="image">
 
-                    <div class="row pt-4">
-                        <button class="btn btn-primary">Update profile</button>
-                    </div>
+                    @if ($errors->has('image'))
+                        <strong>{{ $errors->first('image') }}</strong>
+                    @endif
+                </div>
+
+                <div class="row pt-4">
+                    <button class="btn btn-primary">Save Profile</button>
+                </div>
+
+                <div class="row pt-5">
+                    @foreach($user->posts as $post)
+                        <div class="col-4 pb-4">
+                            <a href="/p/{{ $post->id }}">
+                                <img src="/storage/{{ $post->image }}" class="w-100">
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 @endsection

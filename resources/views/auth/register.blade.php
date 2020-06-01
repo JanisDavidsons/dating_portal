@@ -28,6 +28,58 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="surname"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="surname" type="text"
+                                           class="form-control @error('surname') is-invalid @enderror" name="surname"
+                                           value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+
+                                    @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="age"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+                                <div class="col-md-6">
+                                    <input id="age" type="text"
+                                           class="form-control @error('age') is-invalid @enderror" name="age"
+                                           value="{{ old('age') }}" required autocomplete="age" autofocus>
+                                    @error('age')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <legend class="col-md-4 col-form-label text-md-right">Gender</legend>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="male"
+                                               value="male" checked>
+                                        <label class="form-check-label" for="male">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                               value="female">
+                                        <label class="form-check-label" for="female">
+                                            female
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

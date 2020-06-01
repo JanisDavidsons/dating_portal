@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Profile;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
@@ -12,9 +14,15 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+        $posts = Post::whereIn('user_id', $users)->latest()->paginate(3);
+        return view('posts/index', compact('posts'));
+    }
+
     public function create()
     {
-
         return view('posts/create');
     }
 

@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -16,6 +18,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'age',
+        'gender',
         'email',
         'userName',
         'password',
@@ -43,6 +48,7 @@ class User extends Authenticatable
     protected static function boot()
     {
         parent::boot();
+
         static::created(
             function ($user) {
                 $user->profile()->create(
@@ -50,8 +56,10 @@ class User extends Authenticatable
                         'title' => $user->userName
                     ]
                 );
+                Mail::to($user->email)->send(new NewUserWelcomeMail());
             }
         );
+
     }
 
     public function profile()
@@ -62,5 +70,10 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
+    }
+
+    public function following()
+    {
+        return $this->belongsToMany(Profile::class);
     }
 }

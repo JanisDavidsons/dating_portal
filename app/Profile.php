@@ -8,7 +8,7 @@ class Profile extends Model
 {
     protected $guarded = [];
 
-    public function getProfileImage():string
+    public function profileImage():string
     {
         $imagePath = ($this->image) ? $this->image : 'profile/noImageAvailable.png';
         return '/storage/' .  $imagePath;
@@ -17,5 +17,10 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
     }
 }
