@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Picture;
+use App\User;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class PicturesController extends Controller
@@ -26,22 +28,30 @@ class PicturesController extends Controller
             ]
         );
 
-        $imagePath = request()->file('image')->store('uploads', 'public');
-
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
-        auth()->user()->images()->create(
+        $imagePath = request()->file('image')->store('pictures');
+        auth()->user()->pictures()->create(
             [
                 'caption' => $data['caption'],
-                'image' => $imagePath
+                'location' => $imagePath
             ]
         );
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
+
         return redirect('/profile/' . auth()->id());
     }
 
-    public function show(Picture $gallery)
+    public function show(Picture $picture)
     {
-        return view('/pictures/show', compact('gallery'));
+        return view('/pictures/show', compact('picture'));
+    }
+
+    public function userPictures (User $user)
+    {
+       //$pictures =  $user->pictures()->get();
+        $users = User::WithoutAuthUser()->get();
+
+       return view('pictures.show', compact('users', 'user'));
     }
 }
 

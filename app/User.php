@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Mail\NewUserWelcomeMail;
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail;
@@ -49,17 +50,17 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::created(
-            function ($user) {
-                $user->profile()->create(
-                    [
+//        static::created(
+//            function ($user) {
+//                dd($user);
+//                $user->profile()->create(
+//                    [
 //                        'username' => $user->userName
-                    ]
-                );
+//                    ]
+//                );
 //                Mail::to($user->email)->send(new NewUserWelcomeMail());
-            }
-        );
-
+//            }
+//        );
     }
 
     public function profile()
@@ -67,7 +68,7 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function images()
+    public function pictures()
     {
         return $this->hasMany(Picture::class)->orderBy('created_at', 'DESC');
     }
@@ -75,5 +76,10 @@ class User extends Authenticatable
     public function likes()
     {
         return $this->belongsToMany(Profile::class);
+    }
+
+    public function scopeWithoutAuthUser($query)
+    {
+        $query->where('id', '!=', auth()->id());
     }
 }

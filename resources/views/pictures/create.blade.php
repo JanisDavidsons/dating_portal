@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="row pt-4">
-                    <button class="btn btn-primary">Add New Post</button>
+                    <button class="btn btn-primary">Add New Picture</button>
                 </div>
 
             </div>

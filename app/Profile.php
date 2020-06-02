@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     protected $guarded = [];
+    protected $fillable = [
+        'username',
+        'description',
+        'facebook',
+    ];
 
-    public function profileImage():string
+    public function profileImage(): string
     {
         $imagePath = ($this->image) ? $this->image : 'profile/noImageAvailable.png';
-        return '/storage/' .  $imagePath;
+        return '/storage/' . $imagePath;
     }
 
     public function user()

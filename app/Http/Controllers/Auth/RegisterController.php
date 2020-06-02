@@ -66,11 +66,12 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param array $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
-        return User::create(
+        /**@var User $user */
+        $user = User::create(
             [
                 'name' => $data['name'],
                 'surname' => $data['surname'],
@@ -80,5 +81,7 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
             ]
         );
+        $user->profile()->create([]);
+        return $user;
     }
 }

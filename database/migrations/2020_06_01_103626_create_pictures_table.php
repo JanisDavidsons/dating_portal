@@ -13,7 +13,6 @@ class CreatePicturesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('caption');
-            $table->string('image');
             $table->string('location')->nullable();
             $table->timestamps();
 

@@ -43,7 +43,7 @@
                             <div class="row p-0">
                                 <div style="border: 2px solid #000000" class="mb-2">
                                     <a href="/files/{{$picture->id}}">
-                                        <img class="w-100" src="/storage/{{$picture->image}}" alt="PDF thumbnail;">
+                                        <img class="w-100" src="/storage/{{$picture->location}}" alt="PDF thumbnail;">
                                     </a>
                                 </div>
                             </div>

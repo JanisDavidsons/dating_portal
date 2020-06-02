@@ -5,9 +5,9 @@
         @auth()
             <div class="row">
                 @foreach($users as $user)
-                    @foreach($user->images as $image)
+                    @foreach($user->pictures as $picture)
                         <div class="col-8">
-                            <img src="/storage/{{ $image->image }}" class="w-100">
+                            <img src="{{$picture->getUrl()}}" class="w-100">
                         </div>
                     @endforeach
 

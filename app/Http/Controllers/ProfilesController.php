@@ -19,7 +19,7 @@ class ProfilesController extends Controller
         )->latest()->paginate(3);
         $likes = auth()->user() ? auth()->user()->likes->contains($user->id) : false;
 
-        $imagesCount = $user->images->count();
+        $imagesCount = $user->pictures->count();
         $followersCount = $user->profile->followers->count();
         $followingCount = $user->likes->count();
 

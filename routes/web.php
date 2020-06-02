@@ -18,10 +18,8 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-Route::get('/factory', function (){
-   $users = factory(User::class, 50)->create();
-});
 
+Route::get('/users/{user}/pictures', 'PicturesController@userPictures');
 
 Auth::routes();
 
