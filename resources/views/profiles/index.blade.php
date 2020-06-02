@@ -14,12 +14,11 @@
                         </div>
 
                         @can('update', $user->profile)
-                            <a href="/posts/create">Add New picture</a>
+                            <a href="/pictures/create">Add New picture</a>
                         @endcan
-                        <div class="btn btn-primary" onclick="location.href = '/profile/{{Auth::user()->id}}'">My
-                            profile
-                        </div>
 
+                        <div class="btn btn-primary" onclick="location.href = '/profiles/show'">Find people
+                        </div>
                     </div>
 
                     @can('update', $user->profile)
@@ -27,7 +26,7 @@
                     @endcan
 
                     <div class="d-flex">
-                        <div class="pr-5"><strong>{{ $postCount }}</strong> pictures</div>
+                        <div class="pr-5"><strong>{{ $imagesCount }}</strong> pictures</div>
                         <div class="pr-5"><strong>{{ $followersCount }}</strong> likes</div>
                         {{--                    <div class="pr-5"><strong>{{ $followingCount }}</strong> people you like</div>--}}
                     </div>
@@ -39,18 +38,12 @@
 
             <div class="row">
                 <div class="d-flex justify-content-center">
-                    @foreach($posts as $post)
-                        <div class="col-6 pb-4 d-flex justify-content-center">
+                    @foreach($pictures as $picture)
+                        <div class="col-4 p-4 d-flex justify-content-center">
                             <div class="row p-0">
-                                <div class="pb-1 pr-0 col-12 d-flex justify-content-end">
-                                    <div>
-                                        <follow-button user-id="{{ $user->id }}"
-                                                       follows="{{ $follows }}"></follow-button>
-                                    </div>
-                                </div>
                                 <div style="border: 2px solid #000000" class="mb-2">
-                                    <a href="/files/{{$post->id}}">
-                                        <img class="w-100" src="/storage/{{$post->image}}" alt="PDF thumbnail;">
+                                    <a href="/files/{{$picture->id}}">
+                                        <img class="w-100" src="/storage/{{$picture->image}}" alt="PDF thumbnail;">
                                     </a>
                                 </div>
                             </div>
@@ -60,7 +53,7 @@
             </div>
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-                    {{$posts->links()}}
+                    {{$pictures->links()}}
                 </div>
             </div>
         @endauth

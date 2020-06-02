@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,18 +14,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function (){
+    return view('welcome');
+});
+
+Route::get('/factory', function (){
+   $users = factory(User::class, 50)->create();
+});
 
 
 Auth::routes();
 
-Route::post('follow/{user}', 'FollowsController@store');
 
-Route::get('/', 'ProfilesController@show');
-Route::get('/posts/create', 'PostsController@create');
-Route::post('/posts', 'PostsController@store');
-Route::get('/posts/{post}', 'PostsController@show');
+Route::post('like/{user}', 'LikeController@store');
+
+Route::get('/pictures/create', 'PicturesController@create');
+Route::post('/pictures', 'PicturesController@store');
+Route::get('/pictures/{post}', 'PicturesController@show');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
-Route::get('/profiles/show', 'ProfilesController@show');
+Route::get('/profiles/show', 'ProfilesController@show')->name('profiles.show');

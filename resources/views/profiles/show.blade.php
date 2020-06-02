@@ -5,9 +5,9 @@
         @auth()
             <div class="row">
                 @foreach($users as $user)
-                    @foreach($user->posts as $post)
+                    @foreach($user->images as $image)
                         <div class="col-8">
-                            <img src="/storage/{{ $post->image }}" class="w-100">
+                            <img src="/storage/{{ $image->image }}" class="w-100">
                         </div>
                     @endforeach
 
@@ -24,13 +24,14 @@
                                             <span class="text-dark">{{ $user->username }}</span>
                                         </a>
                                         <div>
-                                            <follow-button user-id="{{ $user->id }}"
-                                                           follows="{{ $user->following->contains($user->id) }}"></follow-button>
+                                            <like-button user-id="{{ $user->id }}"
+                                                         likes="{{ $user->likes->contains($user->id) }}"></like-button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <hr>
+                            <h3 style="font-weight: bold">{{$user->profile->username}}</h3>
                             <p>
                     <span class="font-weight-bold">
                         <a href="/profile/{{ $user->id }}">

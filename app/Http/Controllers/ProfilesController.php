@@ -2,44 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
 use App\User;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
-    public function index( $user)
+    public function index($user)
     {
         $user = User::query()->findOrFail($user);
-        $posts = DB::table('posts')->latest()->paginate(1);
-        $follows = auth()->user() ? auth()->user()->following->contains($user->id) : false;
+        $pictures = DB::table('pictures')->where(
+            [
+                ['user_id', '=', $user->id]
+            ]
+        )->latest()->paginate(3);
+        $likes = auth()->user() ? auth()->user()->likes->contains($user->id) : false;
 
-        $postCount = Cache::remember(
-            'count.posts'. $user->id,
-            now()->addSeconds(30),
-            function () use ($user) {
-            return $user->posts->count();
-        });
-
-        $followersCount = Cache::remember(
-            'count.followers' . $user->id,
-            now()->addSeconds(30),
-            function () use ($user) {
-            return $user->profile->followers->count();
-        });
-        $followingCount = Cache::remember(
-            'count.following' . $user->id,
-            now()->addSeconds(30),
-            function () use ($user){
-                return $user->following->count();
-            });
+        $imagesCount = $user->images->count();
+        $followersCount = $user->profile->followers->count();
+        $followingCount = $user->likes->count();
 
         return view(
-            'profiles/index',compact('user', 'follows', 'postCount', 'followersCount','followingCount','posts')
+            'profiles/index',
+            compact('user', 'likes', 'imagesCount', 'followersCount', 'followingCount', 'pictures')
         );
     }
+
     public function edit(User $user)
     {
         $this->authorize('update', $user->profile);
@@ -52,9 +41,9 @@ class ProfilesController extends Controller
 
         $data = request()->validate(
             [
-                'title' => 'required',
+                'username' => 'required',
                 'description' => 'required',
-                'url' => 'url',
+                'url' => '',
                 'image' => ''
             ]
         );
@@ -72,13 +61,18 @@ class ProfilesController extends Controller
                 $imageArray ?? []
             )
         );
-
         return redirect("/profile/{$user->id}");
     }
 
     public function show()
     {
-        $users = User::where('gender','male')->latest()->paginate(1);
-        return view('/profiles/show',compact('users'));
+        $users = User::where(
+            [
+                ['gender', '!=', Auth::user()->gender],
+                ['id', '!=', Auth::id()]
+            ]
+        )->latest()->paginate(1);
+
+        return view('/profiles/show', compact('users'));
     }
 }

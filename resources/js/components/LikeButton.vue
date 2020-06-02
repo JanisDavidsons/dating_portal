@@ -1,32 +1,29 @@
 <template>
     <div class="container">
-        <button class="btn btn-primary" @click="followUser" v-text='buttonText'></button>
-
+        <button class="btn btn-primary" @click="likeUser" v-text='buttonText'></button>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['userId', 'follows'],
+        props: ['userId', 'likes'],
 
-        mounted() {
-            console.log('Component mounted.')
-        },
         data: function () {
             return {
-                status: this.follows,
+                status: this.likes,
             }
         },
 
         methods: {
-            followUser() {
-                axios.post('/follow/ ' + this.userId)
+            likeUser() {
+                axios.post('/like/ ' + this.userId)
                     .then(response => {
+                        console.log(response)
                         this.status = !this.status;
                     })
-                    .catch(errors =>{
+                    .catch(errors => {
                         console.log('error')
-                        if (errors.response.status == 401){
+                        if (errors.response.status == 401) {
                             window.location = '/login';
                         }
                     });
@@ -35,7 +32,7 @@
 
         computed: {
             buttonText() {
-                return (this.status) ? 'like' : 'dont`t like';
+                return (this.status) ? 'dont`t like' : 'like';
             }
         },
     }

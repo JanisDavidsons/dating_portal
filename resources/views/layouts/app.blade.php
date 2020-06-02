@@ -23,10 +23,10 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand d-flex" href="{{ url('/') }}">
+            <a class="navbar-brand d-flex" href="{{ url('/profiles/show') }}">
                 <div><img src="/svg/websiteLogo.svg" alt="Web site logo"
                           style="height: 30px; border-right: 2px solid #1b1e21" class="pr-3"></div>
-                <div class="pl-3">Janis Davidsons web</div>
+                <div class="pl-3">Tinder</div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -56,7 +56,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->userName }} <span class="caret"></span>
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -65,6 +65,8 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+
+                                <a class="dropdown-item" href="/profile/{{\Illuminate\Support\Facades\Auth::id()}}">My profile</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">

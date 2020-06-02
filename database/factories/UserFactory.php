@@ -18,11 +18,20 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+
+    $generator = new \RandomUser\Generator();
+    $user =$generator->getUser();
+    /** @var \RandomUser\User $user */
+    $user->setDateOfBirth(random_int(1970,2002));
+
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'name' => $user->getFirstName(),
+        'surname' => $user->getLastName(),
+        'age' => date('Y') - $user->getDateOfBirth(),
+        'gender' => $user->getGender(),
+        'email' => $user->getEmail(),
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'password' => $user->getPassword(), // password
         'remember_token' => Str::random(10),
     ];
 });

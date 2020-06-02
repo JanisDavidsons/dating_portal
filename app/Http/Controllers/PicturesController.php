@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use App\Profile;
-use Illuminate\Support\Facades\DB;
+use App\Picture;
 use Intervention\Image\Facades\Image;
 
-class PostsController extends Controller
+class PicturesController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-        $users = auth()->user()->following()->pluck('profiles.user_id');
-        $posts = Post::whereIn('user_id', $users)->latest()->paginate(3);
-        return view('posts/index', compact('posts'));
-    }
-
     public function create()
     {
-        return view('posts/create');
+        return view('pictures/create');
     }
 
     public function store()
@@ -37,9 +28,9 @@ class PostsController extends Controller
 
         $imagePath = request()->file('image')->store('uploads', 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200,1200);
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
         $image->save();
-        auth()->user()->posts()->create(
+        auth()->user()->images()->create(
             [
                 'caption' => $data['caption'],
                 'image' => $imagePath
@@ -48,11 +39,17 @@ class PostsController extends Controller
         return redirect('/profile/' . auth()->id());
     }
 
-    public function show(Post $post)
+    public function show(Picture $gallery)
     {
-        return view('/posts/show',compact('post'));
+        return view('/pictures/show', compact('gallery'));
     }
 }
+
+
+
+
+
+
 
 
 

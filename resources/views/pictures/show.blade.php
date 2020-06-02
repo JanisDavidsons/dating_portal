@@ -4,9 +4,9 @@
     <div class="container">
         @auth()
             <div class="row">
-                <div class="col-8">
-                    <img src="/storage/{{ $post->image }}" class="w-100">
-                </div>
+{{--                <div class="col-8">--}}
+{{--                    <img src="/storage/{{ $gallery->image }}" class="w-100">--}}
+{{--                </div>--}}
                 <div class="col-4">
                     <div>
                         <div class="d-flex align-items-center">

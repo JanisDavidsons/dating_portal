@@ -12,19 +12,19 @@
                 <div class="row">
                     <h1>Edit Profile</h1>
                 </div>
+
                 <div class="form-group row">
-                    <label for="title" class="col-md-4 col-form-label">Title</label>
-
-                    <input id="title"
+                    <label for="description" class="col-md-4 col-form-label">Username</label>
+                    <input id="username"
                            type="text"
-                           class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}"
-                           name="title"
-                           value="{{ old('title') ?? $user->profile->title }}"
-                           autocomplete="title" autofocus>
+                           class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
+                           name="username"
+                           value="{{ old('username') ?? $user->profile->username}}"
+                           autocomplete="username" autofocus>
 
-                    @if ($errors->has('title'))
+                    @if ($errors->has('username'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('title') }}</strong>
+                            <strong>{{ $errors->first('username') }}</strong>
                         </span>
                     @endif
                 </div>
@@ -78,10 +78,10 @@
                 </div>
 
                 <div class="row pt-5">
-                    @foreach($user->posts as $post)
+                    @foreach($user->images as $image)
                         <div class="col-4 pb-4">
-                            <a href="/p/{{ $post->id }}">
-                                <img src="/storage/{{ $post->image }}" class="w-100">
+                            <a href="/p/{{ $image->id }}">
+                                <img src="/storage/{{ $image->image }}" class="w-100">
                             </a>
                         </div>
                     @endforeach

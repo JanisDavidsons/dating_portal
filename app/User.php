@@ -53,10 +53,10 @@ class User extends Authenticatable
             function ($user) {
                 $user->profile()->create(
                     [
-                        'title' => $user->userName
+//                        'username' => $user->userName
                     ]
                 );
-                Mail::to($user->email)->send(new NewUserWelcomeMail());
+//                Mail::to($user->email)->send(new NewUserWelcomeMail());
             }
         );
 
@@ -67,12 +67,12 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function posts()
+    public function images()
     {
-        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
+        return $this->hasMany(Picture::class)->orderBy('created_at', 'DESC');
     }
 
-    public function following()
+    public function likes()
     {
         return $this->belongsToMany(Profile::class);
     }
