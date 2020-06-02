@@ -46,12 +46,10 @@ class PicturesController extends Controller
         return view('/pictures/show', compact('picture'));
     }
 
-    public function userPictures (User $user)
+    public function userPictures ()
     {
-       //$pictures =  $user->pictures()->get();
-        $users = User::WithoutAuthUser()->get();
-
-       return view('pictures.show', compact('users', 'user'));
+        $user = User::WithoutAuthUser()->OpositGender()->inRandomOrder()->first();
+        return view('pictures.show', compact( 'user'));
     }
 }
 

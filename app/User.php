@@ -82,4 +82,9 @@ class User extends Authenticatable
     {
         $query->where('id', '!=', auth()->id());
     }
+
+    public function scopeOpositGender($query)
+    {
+        $query->where('gender', '!=', auth()->user()->gender);
+    }
 }

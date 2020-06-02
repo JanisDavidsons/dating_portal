@@ -18,8 +18,7 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-
-Route::get('/users/{user}/pictures', 'PicturesController@userPictures');
+Route::get('/users/match', 'PicturesController@userPictures');
 
 Auth::routes();
 
