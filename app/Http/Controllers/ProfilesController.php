@@ -71,8 +71,7 @@ class ProfilesController extends Controller
 
     public function show()
     {
-        $user = auth()->user()->WithoutAuthUser()->OpositGender()->WithoutAffections()->inRandomOrder()->first();
-
+        $user = auth()->user()->WithoutAuthUser()->OpositGender()->inRandomOrder()->first();
         $likes = $this->getLikedProfiles();
 
         return view('/profiles/show', compact('user', 'likes'));
@@ -80,7 +79,6 @@ class ProfilesController extends Controller
 
     private function getLikedProfiles(): DatabaseCollection
     {
-//        dd(auth()->user()->likes);
         return auth()->user()->affections;
     }
 }

@@ -50,6 +50,17 @@ class User extends Authenticatable
     {
         parent::boot();
 
+//        static::created(
+//            function ($user) {
+//                dd($user);
+//                $user->profile()->create(
+//                    [
+//                        'username' => $user->userName
+//                    ]
+//                );
+//                Mail::to($user->email)->send(new NewUserWelcomeMail());
+//            }
+//        );
     }
 
     public function profile()
