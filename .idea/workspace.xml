@@ -20,9 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a468bd00-c7cb-4a18-8790-855f23e6bf57" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Affection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_03_144620_create_affection_user_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_03_145821_create_affections_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_25_183057_creates_profile_user_pivot_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_01_103626_create_pictures_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_01_103626_create_pictures_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/DislikeButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/DislikeButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/DisplayProfilePicture.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/LikeButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LikeButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +57,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
@@ -167,7 +183,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/profiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -179,14 +195,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/database/migrations" />
+      <recent name="$PROJECT_DIR$/resources/views/profiles" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/pictures" />
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/profiles" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources/views/posts" />
     </key>
   </component>
   <component name="RunManager">
@@ -230,7 +248,9 @@
       <workItem from="1590999190111" duration="19901000" />
       <workItem from="1591024809329" duration="57612000" />
       <workItem from="1591165955461" duration="15611000" />
-      <workItem from="1591182779417" duration="4937000" />
+      <workItem from="1591182779417" duration="10533000" />
+      <workItem from="1591194302185" duration="7659000" />
+      <workItem from="1591208273614" duration="3200000" />
     </task>
     <task id="LOCAL-00001" summary="Added like button functionality">
       <created>1591006624492</created>
@@ -274,11 +294,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591186439392</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit 8">
+      <created>1591188900389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591188900389</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -307,7 +344,8 @@
     <MESSAGE value="Commit 5" />
     <MESSAGE value="Commit 6" />
     <MESSAGE value="Commit 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 7" />
+    <MESSAGE value="Commit 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 8" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2586" y="242" width="824" height="684" key="#CLI_Interpreters" timestamp="1589865220019">
@@ -343,11 +381,15 @@
     </state>
     <state x="2611" y="102" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591002806132" />
     <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1589982943820" />
-    <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591186438773">
+    <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591188900296">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="2419" y="57" width="912" height="915" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591131769647" />
-    <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1591186438773" />
+    <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188900296" />
+    <state x="100" y="98" width="1720" height="834" key="DiffContextDialog" timestamp="1591194228489">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="100" y="98" width="1720" height="834" key="DiffContextDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591194228489" />
     <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590999919318">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -371,11 +413,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2530" y="234" width="689" height="561" key="NewPhpClassDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591089321804" />
-    <state x="671" y="189" width="567" height="633" key="RollbackChangesDialog" timestamp="1591183989010">
+    <state x="671" y="189" width="543" height="633" key="RollbackChangesDialog" timestamp="1591193942734">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="2591" y="198" width="567" height="633" key="RollbackChangesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590394280770" />
-    <state x="671" y="189" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591183989010" />
+    <state x="671" y="189" width="543" height="633" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591193942734" />
     <state x="2492" y="219" key="SettingsEditor" timestamp="1590472625492">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -386,15 +428,16 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1169" y="249" width="639" height="524" key="StructurePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1589380988701" />
-    <state x="555" y="240" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591186446341">
+    <state x="555" y="240" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591188906233">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591131773074" />
-    <state x="555" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1591186446341" />
-    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591007310997">
+    <state x="555" y="240" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188906233" />
+    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591208633612">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591007310997" />
+    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591208633612" />
+    <state x="818" y="375" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032@0.0.1920.1032" timestamp="1591194109765" />
     <state x="2633" y="325" width="484" height="368" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1591019372509">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -403,6 +446,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2709" y="286" width="331" height="457" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591020598492" />
+    <state x="100" y="98" width="1720" height="834" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591194228490">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="100" y="98" width="1720" height="834" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591194228490" />
+    <state x="731" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591194220187">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="731" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032@0.0.1920.1032" timestamp="1591194220187" />
     <state x="2586" y="415" width="578" height="199" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1591088882372">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

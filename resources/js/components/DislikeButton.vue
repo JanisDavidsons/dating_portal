@@ -19,7 +19,7 @@
         methods: {
             dislikeUser() {
                 console.log(this.userId)
-                axios.post('/dislike/ ' + this.userId)
+                axios.post('/affection/ ' + this.userId + '/dislike')
                     .then(response => {
                         console.log(response)
                         this.status = !this.status;

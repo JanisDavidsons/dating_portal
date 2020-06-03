@@ -15,8 +15,6 @@ class ProfilesController extends Controller
 
         $likedProfiles = $this->getLikedProfiles();
 
-
-
         $pictures = DB::table('pictures')->where(
             [
                 ['user_id', '=', $user->id]
@@ -25,12 +23,11 @@ class ProfilesController extends Controller
         $likes = auth()->user() ? auth()->user()->affections->contains($user->id) : false;
 
         $imagesCount = $user->pictures->count();
-        $followersCount = $user->profile->followers->count();
         $followingCount = $user->affections->count();
 
         return view(
             'profiles/index',
-            compact('user', 'likes', 'imagesCount', 'followersCount', 'followingCount', 'pictures', 'likedProfiles')
+            compact('user', 'likes', 'imagesCount', 'followingCount', 'pictures', 'likedProfiles')
         );
     }
 
@@ -71,7 +68,7 @@ class ProfilesController extends Controller
 
     public function show()
     {
-        $user = auth()->user()->WithoutAuthUser()->OpositGender()->inRandomOrder()->first();
+        $user = auth()->user()->withoutAuthUser()->oppositGender()->inRandomOrder()->first();
         $likes = $this->getLikedProfiles();
 
         return view('/profiles/show', compact('user', 'likes'));

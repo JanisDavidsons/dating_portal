@@ -12,7 +12,7 @@ class CreatePicturesTable extends Migration
         Schema::create('pictures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('caption');
+            $table->string('caption')->nullable();
             $table->string('location')->nullable();
             $table->timestamps();
 

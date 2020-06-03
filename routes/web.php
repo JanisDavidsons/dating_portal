@@ -22,9 +22,7 @@ Route::get('/users/match', 'PicturesController@userPictures');
 
 Auth::routes();
 
-
-Route::post('like/{user}', 'MatchController@like');
-Route::post('dislike/{user}', 'MatchController@dislike');
+Route::post('affection/{user}/{type}', 'MatchController@affection');
 
 Route::get('/pictures/create', 'PicturesController@create');
 Route::post('/pictures', 'PicturesController@store');

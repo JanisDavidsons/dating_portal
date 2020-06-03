@@ -49,18 +49,6 @@ class User extends Authenticatable
     protected static function boot()
     {
         parent::boot();
-
-//        static::created(
-//            function ($user) {
-//                dd($user);
-//                $user->profile()->create(
-//                    [
-//                        'username' => $user->userName
-//                    ]
-//                );
-//                Mail::to($user->email)->send(new NewUserWelcomeMail());
-//            }
-//        );
     }
 
     public function profile()
@@ -75,7 +63,7 @@ class User extends Authenticatable
 
     public function affections()
     {
-        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
+        return $this->belongsToMany(Affection::class)->withPivot(['match_type']);
     }
 
     public function dislikes()
@@ -88,7 +76,7 @@ class User extends Authenticatable
         $query->where('id', '!=', auth()->id());
     }
 
-    public function scopeOpositGender($query)
+    public function scopeOppositGender($query)
     {
         $query->where('gender', '!=', auth()->user()->gender);
     }

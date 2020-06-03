@@ -82,6 +82,7 @@ class RegisterController extends Controller
             ]
         );
         $user->profile()->create([]);
+        $user->pictures()->create([]);
         return $user;
     }
 }

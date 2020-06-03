@@ -1928,7 +1928,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       console.log(this.userId);
-      axios.post('/dislike/ ' + this.userId).then(function (response) {
+      axios.post('/affection/ ' + this.userId + '/dislike').then(function (response) {
         console.log(response);
         _this.status = !_this.status;
         window.location = '/profiles/show';
@@ -1976,7 +1976,7 @@ __webpack_require__.r(__webpack_exports__);
     likeUser: function likeUser() {
       var _this = this;
 
-      axios.post('/like/ ' + this.userId).then(function (response) {
+      axios.post('/affection/ ' + this.userId + '/like').then(function (response) {
         console.log(response);
         _this.status = !_this.status;
         window.location = '/profiles/show';

@@ -16,7 +16,7 @@
 
         methods: {
             likeUser() {
-                axios.post('/like/ ' + this.userId)
+                axios.post('/affection/ ' + this.userId + '/like')
                     .then(response => {
                         console.log(response)
                         this.status = !this.status;
