@@ -50,17 +50,6 @@ class User extends Authenticatable
     {
         parent::boot();
 
-//        static::created(
-//            function ($user) {
-//                dd($user);
-//                $user->profile()->create(
-//                    [
-//                        'username' => $user->userName
-//                    ]
-//                );
-//                Mail::to($user->email)->send(new NewUserWelcomeMail());
-//            }
-//        );
     }
 
     public function profile()
@@ -73,9 +62,14 @@ class User extends Authenticatable
         return $this->hasMany(Picture::class)->orderBy('created_at', 'DESC');
     }
 
-    public function likes()
+    public function affections()
     {
-        return $this->belongsToMany(Profile::class);
+        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
+    }
+
+    public function dislikes()
+    {
+        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
     }
 
     public function scopeWithoutAuthUser($query)
@@ -86,5 +80,15 @@ class User extends Authenticatable
     public function scopeOpositGender($query)
     {
         $query->where('gender', '!=', auth()->user()->gender);
+    }
+
+    public function scopeWithoutLikes($query)
+    {
+    }
+
+    public function scopeWithoutAffections($query)
+    {
+        $affections = $this->affections()->pluck('profile_id');
+        $query->whereNotIn('id',$affections->all());
     }
 }

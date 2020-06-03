@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Collection as DatabaseCollection;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
@@ -12,20 +12,25 @@ class ProfilesController extends Controller
     public function index($user)
     {
         $user = User::query()->findOrFail($user);
+
+        $likedProfiles = $this->getLikedProfiles();
+
+
+
         $pictures = DB::table('pictures')->where(
             [
                 ['user_id', '=', $user->id]
             ]
         )->latest()->paginate(3);
-        $likes = auth()->user() ? auth()->user()->likes->contains($user->id) : false;
+        $likes = auth()->user() ? auth()->user()->affections->contains($user->id) : false;
 
         $imagesCount = $user->pictures->count();
         $followersCount = $user->profile->followers->count();
-        $followingCount = $user->likes->count();
+        $followingCount = $user->affections->count();
 
         return view(
             'profiles/index',
-            compact('user', 'likes', 'imagesCount', 'followersCount', 'followingCount', 'pictures')
+            compact('user', 'likes', 'imagesCount', 'followersCount', 'followingCount', 'pictures', 'likedProfiles')
         );
     }
 
@@ -66,13 +71,16 @@ class ProfilesController extends Controller
 
     public function show()
     {
-        $users = User::where(
-            [
-                ['gender', '!=', Auth::user()->gender],
-                ['id', '!=', Auth::id()]
-            ]
-        )->latest()->paginate(1);
+        $user = auth()->user()->WithoutAuthUser()->OpositGender()->WithoutAffections()->inRandomOrder()->first();
 
-        return view('/profiles/show', compact('users'));
+        $likes = $this->getLikedProfiles();
+
+        return view('/profiles/show', compact('user', 'likes'));
+    }
+
+    private function getLikedProfiles(): DatabaseCollection
+    {
+//        dd(auth()->user()->likes);
+        return auth()->user()->affections;
     }
 }

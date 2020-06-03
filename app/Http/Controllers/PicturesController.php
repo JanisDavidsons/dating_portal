@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use App\User;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class PicturesController extends Controller

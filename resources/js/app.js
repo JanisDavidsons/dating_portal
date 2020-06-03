@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('like-button', require('./components/LikeButton.vue').default);
+Vue.component('dislike-button', require('./components/DislikeButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

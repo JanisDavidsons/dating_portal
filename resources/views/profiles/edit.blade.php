@@ -78,10 +78,10 @@
                 </div>
 
                 <div class="row pt-5">
-                    @foreach($user->images as $image)
+                    @foreach($user->pictures as $picture)
                         <div class="col-4 pb-4">
-                            <a href="/p/{{ $image->id }}">
-                                <img src="/storage/{{ $image->image }}" class="w-100">
+                            <a href="/picture/{{ $picture->id }}">
+                                <img src="{{$picture->getUrl()}}" class="w-100">
                             </a>
                         </div>
                     @endforeach

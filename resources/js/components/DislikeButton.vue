@@ -1,26 +1,30 @@
 <template>
     <div class="container">
-        <button class="btn btn-primary" style="width: 100px" @click="likeUser" v-text='buttonText'></button>
+        <button class="btn btn-danger" style="width: 100px" @click="dislikeUser" v-text='buttonText'></button>
     </div>
 </template>
 
+
+
 <script>
     export default {
-        props: ['userId', 'likes'],
+        props: ['userId', 'dislikes'],
 
         data: function () {
             return {
-                status: this.likes,
+                status: this.dislikes,
             }
         },
 
         methods: {
-            likeUser() {
-                axios.post('/like/ ' + this.userId)
+            dislikeUser() {
+                console.log(this.userId)
+                axios.post('/dislike/ ' + this.userId)
                     .then(response => {
                         console.log(response)
                         this.status = !this.status;
                         window.location = '/profiles/show';
+
                     })
                     .catch(errors => {
                         console.log('error')
@@ -33,11 +37,14 @@
 
         computed: {
             buttonText() {
-                return (this.status) ? 'Liked !!' : 'Like';
+                return (this.status) ? 'Disliked !!' : 'Dislike';
             }
-        }
+        },
     }
 </script>
+
+<style scoped>
+</style>
 
 
 
