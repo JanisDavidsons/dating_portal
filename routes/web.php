@@ -22,7 +22,6 @@ Route::get('/', function (){
 
 Route::post('settings/{minAge}/{maxAge}', 'SettingsController@filterAge');
 
-
 Auth::routes();
 
 Route::post('affection/{user}/{type}', 'MatchController@affection');

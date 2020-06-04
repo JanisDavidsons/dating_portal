@@ -50,9 +50,10 @@
                     <div><a href="#">{{ $user->profile->url }}</a></div>
                 </div>
             </div>
+
             <div class="row mt-4">
                 <h3 style="font-weight: bold">People you liked!</h3>
-                @foreach($likedUsers as $user)
+            @foreach($likedUsers as $user)
                     <div class="col-12 pb-3">
                         <div class="row">
                             <div class="col-8">

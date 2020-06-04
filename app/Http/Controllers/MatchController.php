@@ -27,17 +27,17 @@ class MatchController extends Controller
 
     public function show()
     {
-        $user = auth()->user()->withoutAuthUser()->filterAffections()->oppositGender()->inRandomOrder()->first();
+        $ageSettings = auth()->user()->profile;
+//        dd($authUserProfile);
+        $user = auth()->user()
+            ->withoutAuthUser()
+            ->filterAffections()
+            ->withinAge($ageSettings->min_age,$ageSettings->max_age)
+            ->oppositGender()
+            ->inRandomOrder()
+            ->first();
         return view('/profiles/show', compact('user'));
     }
-
-//    private function likedUsers()
-//    {
-//        dd();
-//        $user = auth()->user()->withoutAuthUser()->filterAffections()->oppositGender()->inRandomOrder()->get();
-//        dd($user);
-//        return auth()->user()->likedUsers()->get();
-//    }
 }
 
 

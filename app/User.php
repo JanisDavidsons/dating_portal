@@ -2,11 +2,8 @@
 
 namespace App;
 
-use App\Mail\NewUserWelcomeMail;
-use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -84,20 +81,30 @@ class User extends Authenticatable
     public function scopeFilterAffections($query)
     {
         $affections = $this->affections()->pluck('affection_to');
-        $query->whereNotIn('id',$affections->all());
+        $query->whereNotIn('id', $affections->all());
+    }
+
+    public function scopeWithinAge($query, int $minAge, int $maxAge)
+    {
+        $query->whereHas(
+            'profile',
+            function ($query) use ($minAge, $maxAge) {
+                $query->whereBetween('age', [$minAge, $maxAge]);
+            }
+        );
     }
 
     public function scopeLikedUsers($query)
     {
         $likedUsers = $this->affections()->pluck('affection_to');
         $query->whereIn('id',$likedUsers->all())
-                ->where('affection_type','==','like');
+            ->where('affection_type','==','like');
     }
 
-    public function scopeDisLikedUsers($query)
-    {
-        $likedUsers = $this->affections()->pluck('affection_to');
-        $query->whereIn('id',$likedUsers->all())
-            ->where('affection_type','==','dislike');
-    }
+//    public function scopeDisLikedUsers($query)
+//    {
+//        $likedUsers = $this->affections()->pluck('affection_to');
+//        $query->whereIn('id', $likedUsers->all())
+//            ->where('affection_type', 'dislike');
+//    }
 }
