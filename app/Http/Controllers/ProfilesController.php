@@ -76,6 +76,12 @@ class ProfilesController extends Controller
 
     private function getLikedProfiles(): DatabaseCollection
     {
+
         return auth()->user()->affections;
     }
 }
+
+
+
+
+

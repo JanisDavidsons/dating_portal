@@ -14,7 +14,7 @@ class Picture extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getUrl():string
+    public function getUrl()
     {
         return Storage::exists($this->location) ? Storage::url($this->location) : $this->location;
     }

@@ -18,6 +18,8 @@ Route::get('/', function (){
     return view('welcome');
 });
 
+Route::post('settings/{minAge}/{maxAge}', 'SettingsController@filterAge');
+
 Route::get('/users/match', 'PicturesController@userPictures');
 
 Auth::routes();

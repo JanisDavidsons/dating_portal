@@ -19,6 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('username')->nullable();
             $table->text('description')->nullable();
             $table->string('facebook')->nullable();
+            $table->integer('minAge')->nullable();
+            $table->integer('maxAge')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

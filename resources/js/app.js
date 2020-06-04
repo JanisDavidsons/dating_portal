@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('like-button', require('./components/LikeButton.vue').default);
 Vue.component('dislike-button', require('./components/DislikeButton.vue').default);
+Vue.component('range-slider', require('./components/RangeSlider.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

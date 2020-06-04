@@ -37,15 +37,12 @@
             </div>
 
 
-
-
             <div class="row mt-4">
                 <h3 style="font-weight: bold">People you liked!</h3>
                 @foreach($likedProfiles as $profile)
                     <div class="col-12 pb-3">
                         <div class="row">
                             <div class="col-8">
-
 
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 

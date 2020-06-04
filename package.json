@@ -23,5 +23,10 @@
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
         "webpack-livereload-plugin": "^1.2.0"
+    },
+    "dependencies": {
+        "@netsells/vue-range-slider": "^1.0.0",
+        "vue-range-slider": "^0.6.0",
+        "vue-slider-component": "^3.1.5"
     }
 }

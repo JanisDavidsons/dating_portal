@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Affection;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MatchController extends Controller
 {
