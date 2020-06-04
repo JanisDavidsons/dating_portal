@@ -4,50 +4,61 @@
     <div class="container">
         @auth()
             <div class="row">
-                <div class="col-3 p-5">
-{{--                    <img src="{{ $user->pictures[0]->getUrl() }}" class="rounded-circle w-100">--}}
-                </div>
+                @if($user->pictures->count() >0)
+                    <div class="col-3 p-5">
+                        <img src="{{ $user->pictures[0]->getUrl() }}" class="rounded-circle w-100">
+                    </div>
+                @endif
+
                 <div class="col-9 pt-5">
                     <div class="d-flex justify-content-between align-items-baseline">
                         <div class="d-flex align-items-center pb-3">
-                            <div class="h4">{{ $user->username }}</div>
+                            <div class="h4">{{ $user->name }}</div>
                         </div>
 
                         @can('update', $user->profile)
-                            <a href="/pictures/create">Add New picture</a>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <a class="navbar-brand" href="/match/show">Find match</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/pictures/create">Add New picture</a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/pictures/show">Show my gallery</a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
                         @endcan
-
-                        <div class="btn btn-primary" onclick="location.href = '/profiles/show'">Find people
-                        </div>
                     </div>
-
-                    @can('update', $user->profile)
-                        <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
-                    @endcan
 
                     <div class="d-flex">
                         <div class="pr-5"><strong>{{ $imagesCount }}</strong> pictures</div>
-{{--                        <div class="pr-5"><strong>{{ $followersCount }}</strong> likes</div>--}}
-                        {{--                    <div class="pr-5"><strong>{{ $followingCount }}</strong> people you like</div>--}}
+                        <div class="pr-5"><strong>{{ $likedUsers->count() }}</strong> likes</div>
                     </div>
                     <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
                     <div>{{ $user->profile->description }}</div>
                     <div><a href="#">{{ $user->profile->url }}</a></div>
                 </div>
             </div>
-
-
             <div class="row mt-4">
                 <h3 style="font-weight: bold">People you liked!</h3>
-                @foreach($likedProfiles as $profile)
+                @foreach($likedUsers as $user)
                     <div class="col-12 pb-3">
                         <div class="row">
                             <div class="col-8">
-
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-
                                     <div class="carousel-inner" role="listbox">
-                                        @foreach( $profile->user->pictures as $picture )
+                                        @foreach($user->pictures as $picture)
                                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                                 <img class="d-block img-fluid w-100" src="{{ $picture->getUrl() }}"
                                                      alt="{{ $picture->caption }}">
@@ -56,7 +67,6 @@
                                             </div>
                                         @endforeach
                                     </div>
-
                                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
                                        data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -67,50 +77,20 @@
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
-
                                 </div>
-
-
                             </div>
-
-
-
-
-
-
                             <div class="col-4">
                                 <div>
+                                    <h3 style="font-weight: bold">{{$user->name}}</h3>
                                     <hr>
-                                    <h3 style="font-weight: bold">{{$profile->username}}</h3>
-                                    <p>{{$profile->user->gender}}</p>
-                                    <p>{{$profile->user->age}}</p>
-                                    <h5>{{$profile->description}}</h5>
+                                    <p>{{$user->gender}}</p>
+                                    <p>{{$user->age}}</p>
+                                    <h5>{{$user->profile->description}}</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-            </div>
-
-            {{--            <div class="row">--}}
-            {{--                <div class="d-flex justify-content-center">--}}
-            {{--                    @foreach($pictures as $picture)--}}
-            {{--                        <div class="col-4 p-4 d-flex justify-content-center">--}}
-            {{--                            <div class="row p-0">--}}
-            {{--                                <div style="border: 2px solid #000000" class="mb-2">--}}
-            {{--                                    <a href="/files/{{$picture->id}}">--}}
-            {{--                                        <img class="w-100" src="/storage/{{$picture->location}}" alt="PDF thumbnail;">--}}
-            {{--                                    </a>--}}
-            {{--                                </div>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    @endforeach--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    {{$pictures->links()}}
-                </div>
             </div>
         @endauth
     </div>

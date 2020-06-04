@@ -9,6 +9,7 @@ class Picture extends Model
 {
     protected $fillable = ['caption','location'];
 
+
     public function user()
     {
         return $this->belongsTo(User::class);

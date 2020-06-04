@@ -23,7 +23,7 @@
                     .then(response => {
                         console.log(response)
                         this.status = !this.status;
-                        window.location = '/profiles/show';
+                        window.location = '/match/show';
 
                     })
                     .catch(errors => {

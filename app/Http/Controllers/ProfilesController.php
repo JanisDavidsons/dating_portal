@@ -7,27 +7,26 @@ use Illuminate\Database\Eloquent\Collection as DatabaseCollection;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
-class ProfilesController extends Controller
+class  ProfilesController extends Controller
 {
     public function index($user)
     {
-        $user = User::query()->findOrFail($user);
+        $user = auth()->user();
 
-        $likedProfiles = $this->getLikedProfiles();
+        $likedUsers = auth()->user()->likedUsers()->get();
 
         $pictures = DB::table('pictures')->where(
             [
                 ['user_id', '=', $user->id]
             ]
         )->latest()->paginate(3);
-        $likes = auth()->user() ? auth()->user()->affections->contains($user->id) : false;
+
 
         $imagesCount = $user->pictures->count();
-        $followingCount = $user->affections->count();
 
         return view(
             'profiles/index',
-            compact('user', 'likes', 'imagesCount', 'followingCount', 'pictures', 'likedProfiles')
+            compact('user','imagesCount', 'pictures', 'likedUsers')
         );
     }
 
@@ -64,20 +63,6 @@ class ProfilesController extends Controller
             )
         );
         return redirect("/profile/{$user->id}");
-    }
-
-    public function show()
-    {
-        $user = auth()->user()->withoutAuthUser()->oppositGender()->inRandomOrder()->first();
-        $likes = $this->getLikedProfiles();
-
-        return view('/profiles/show', compact('user', 'likes'));
-    }
-
-    private function getLikedProfiles(): DatabaseCollection
-    {
-
-        return auth()->user()->affections;
     }
 }
 

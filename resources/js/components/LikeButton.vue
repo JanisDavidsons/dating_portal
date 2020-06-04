@@ -18,9 +18,9 @@
             likeUser() {
                 axios.post('/affection/ ' + this.userId + '/like')
                     .then(response => {
-                        console.log(response)
+                        console.log(response.data)
                         this.status = !this.status;
-                        window.location = '/profiles/show';
+                        window.location = '/match/show';
                     })
                     .catch(errors => {
                         console.log('error')

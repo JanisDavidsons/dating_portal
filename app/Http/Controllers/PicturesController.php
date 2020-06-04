@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Picture;
 use App\User;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class PicturesController extends Controller
 {
@@ -40,10 +41,22 @@ class PicturesController extends Controller
         return redirect('/profile/' . auth()->id());
     }
 
-    public function show(Picture $picture)
+    public function show()
     {
-        return view('/pictures/show', compact('picture'));
+        return view('/pictures/show');
     }
+
+    public function delete($id)
+    {
+        $pictureToDelete = Picture::query()->findOrFail($id);
+        File::delete($pictureToDelete->getUrl());
+
+        if ($pictureToDelete->delete()) {
+            return redirect()->back()->with('success', 'PDF file is deleted!');
+        }
+        return redirect()->back()->with('error', 'Failed to delete this file!');
+    }
+
 
     public function userPictures ()
     {

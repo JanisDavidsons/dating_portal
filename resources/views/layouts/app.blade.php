@@ -25,7 +25,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand d-flex" href="{{ url('/profiles/show') }}">
+            <a class="navbar-brand d-flex" href="{{ url('/match/show') }}">
                 <div><img src="/svg/websiteLogo.svg" alt="Web site logo"
                           style="height: 30px; border-right: 2px solid #1b1e21" class="pr-3"></div>
                 <div class="pl-3">Tinder</div>

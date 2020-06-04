@@ -14,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/', function (){
     return view('welcome');
 });
 
 Route::post('settings/{minAge}/{maxAge}', 'SettingsController@filterAge');
 
-Route::get('/users/match', 'PicturesController@userPictures');
 
 Auth::routes();
 
@@ -28,9 +29,11 @@ Route::post('affection/{user}/{type}', 'MatchController@affection');
 
 Route::get('/pictures/create', 'PicturesController@create');
 Route::post('/pictures', 'PicturesController@store');
-Route::get('/pictures/{post}', 'PicturesController@show');
+Route::delete('/picture/delete/{id}', 'PicturesController@delete');
+Route::get('/pictures/show', 'PicturesController@show');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
-Route::get('/profiles/show', 'ProfilesController@show')->name('profiles.show');
+
+Route::get('/match/show', 'MatchController@show')->name('match.show');

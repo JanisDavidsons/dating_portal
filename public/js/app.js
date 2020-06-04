@@ -1931,7 +1931,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/affection/ ' + this.userId + '/dislike').then(function (response) {
         console.log(response);
         _this.status = !_this.status;
-        window.location = '/profiles/show';
+        window.location = '/match/show';
       })["catch"](function (errors) {
         console.log('error');
 
@@ -1977,9 +1977,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('/affection/ ' + this.userId + '/like').then(function (response) {
-        console.log(response);
+        console.log(response.data);
         _this.status = !_this.status;
-        window.location = '/profiles/show';
+        window.location = '/match/show';
       })["catch"](function (errors) {
         console.log('error');
 

@@ -63,13 +63,13 @@ class User extends Authenticatable
 
     public function affections()
     {
-        return $this->belongsToMany(Affection::class)->withPivot(['match_type']);
+        return $this->hasMany(Affection::class);
     }
 
-    public function dislikes()
-    {
-        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
-    }
+//    public function dislikes()
+//    {
+//        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
+//    }
 
     public function scopeWithoutAuthUser($query)
     {
@@ -81,13 +81,23 @@ class User extends Authenticatable
         $query->where('gender', '!=', auth()->user()->gender);
     }
 
-    public function scopeWithoutLikes($query)
+    public function scopeFilterAffections($query)
     {
+        $affections = $this->affections()->pluck('affection_to');
+        $query->whereNotIn('id',$affections->all());
     }
 
-    public function scopeWithoutAffections($query)
+    public function scopeLikedUsers($query)
     {
-        $affections = $this->affections()->pluck('profile_id');
-        $query->whereNotIn('id',$affections->all());
+        $likedUsers = $this->affections()->pluck('affection_to');
+        $query->whereIn('id',$likedUsers->all())
+                ->where('affection_type','==','like');
+    }
+
+    public function scopeDisLikedUsers($query)
+    {
+        $likedUsers = $this->affections()->pluck('affection_to');
+        $query->whereIn('id',$likedUsers->all())
+            ->where('affection_type','==','dislike');
     }
 }

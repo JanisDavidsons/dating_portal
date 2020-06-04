@@ -105,7 +105,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | The following array lists the "watchers" that will be registered with
-    | Telescope. The watchers gather the application's profile data when
+    | Telescope. The watchers gather the application's defaultPicture data when
     | a request or task is executed. Feel free to customize this list.
     |
     */

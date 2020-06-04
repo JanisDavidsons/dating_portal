@@ -82,7 +82,11 @@ class RegisterController extends Controller
             ]
         );
         $user->profile()->create([]);
-        $user->pictures()->create([]);
+        $user->pictures()->create(
+            [
+                'location' => 'pictures/noImageAvailable.png'
+            ]
+        );
         return $user;
     }
 }
