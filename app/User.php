@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -46,6 +48,10 @@ class User extends Authenticatable
     protected static function boot()
     {
         parent::boot();
+
+        static::created(function ($user) {
+            Mail::to($user->email)->send(new NewUserWelcomeMail());
+        });
     }
 
     public function profile()
@@ -63,14 +69,9 @@ class User extends Authenticatable
         return $this->hasMany(Affection::class);
     }
 
-//    public function dislikes()
-//    {
-//        return $this->belongsToMany(Profile::class)->withPivot(['match_type']);
-//    }
-
     public function scopeWithoutAuthUser($query)
     {
-        $query->where('id', '!=', auth()->id());
+        $query->where('id', '!=', $this->id);
     }
 
     public function scopeOppositGender($query)
@@ -96,15 +97,28 @@ class User extends Authenticatable
 
     public function scopeLikedUsers($query)
     {
-        $likedUsers = $this->affections()->pluck('affection_to');
-        $query->whereIn('id',$likedUsers->all())
-            ->where('affection_type','==','like');
+        $likedUsers = $this->affections()
+            ->where('affection_type','=','like')
+            ->pluck('affection_to');
+
+        $query->whereIn('id', $likedUsers->all());
     }
 
-//    public function scopeDisLikedUsers($query)
-//    {
-//        $likedUsers = $this->affections()->pluck('affection_to');
-//        $query->whereIn('id', $likedUsers->all())
-//            ->where('affection_type', 'dislike');
-//    }
+    public function scopeDisLikedUsers($query)
+    {
+        $likedUsers = $this->affections()
+            ->where('affection_type','!=','like')
+            ->pluck('affection_to');
+
+        $query->whereIn('id', $likedUsers->all());
+    }
 }
+
+
+
+
+
+
+
+
+

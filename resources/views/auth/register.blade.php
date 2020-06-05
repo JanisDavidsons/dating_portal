@@ -48,7 +48,7 @@
                                 <label for="age"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
                                 <div class="col-md-6">
-                                    <input id="age" type="text"
+                                    <input id="age" type="number"
                                            class="form-control @error('age') is-invalid @enderror" name="age"
                                            value="{{ old('age') }}" required autocomplete="age" autofocus>
                                     @error('age')
@@ -99,11 +99,10 @@
                             <div class="form-group row">
                                 <label for="userName"
                                        class="col-md-4 col-form-label text-md-right">{{ __('User name') }}</label>
-
                                 <div class="col-md-6">
-                                    <input id="userName" type="userName"
+                                    <input id="userName" type="text"
                                            class="form-control @error('userName') is-invalid @enderror" name="userName"
-                                           value="{{ old('userName') }}" autocomplete="userName">
+                                           value="{{ old('userName') }}" required autocomplete="userName" autofocus>
 
                                     @error('userName')
                                     <span class="invalid-feedback" role="alert">

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use App\User;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 
 class PicturesController extends Controller
@@ -21,24 +20,24 @@ class PicturesController extends Controller
 
     public function store()
     {
-        $data = \request()->validate(
-            [
-                'caption' => 'required',
-                'image' => ['required', 'image']
-            ]
-        );
+//        $data = \request()->validate(
+//            [
+//                'caption' => 'required',
+//                'image' => ['required', 'image']
+//            ]
+//        );
+//
+//        $imagePath = request()->file('image')->store('pictures');
+//        auth()->user()->pictures()->create(
+//            [
+//                'caption' => $data['caption'],
+//                'location' => $imagePath
+//            ]
+//        );
+//        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+//        $image->save();
 
-        $imagePath = request()->file('image')->store('pictures');
-        auth()->user()->pictures()->create(
-            [
-                'caption' => $data['caption'],
-                'location' => $imagePath
-            ]
-        );
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
-
-        return redirect('/profile/' . auth()->id());
+//        return redirect('/profile/' . auth()->id());
     }
 
     public function show()
@@ -52,9 +51,9 @@ class PicturesController extends Controller
         File::delete($pictureToDelete->getUrl());
 
         if ($pictureToDelete->delete()) {
-            return redirect()->back()->with('success', 'PDF file is deleted!');
+            return redirect()->back()->with('success', 'picture deleted!');
         }
-        return redirect()->back()->with('error', 'Failed to delete this file!');
+        return redirect()->back()->with('error', 'Failed to delete this picture!');
     }
 
 

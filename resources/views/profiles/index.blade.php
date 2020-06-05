@@ -16,29 +16,21 @@
                             <div class="h4">{{ $user->name }}</div>
                         </div>
 
-                        @can('update', $user->profile)
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                <a class="navbar-brand" href="/match/show">Find match</a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="/pictures/create">Add New picture</a>
-                                        </li>
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="/pictures/show">Show my gallery</a>
-                                        </li>
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="/profile/{{ $user->id }}/edit">Edit Profile</a>
-                                        </li>
-                                    </ul>
+
+                        <div class="col-4">
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <div class="row">
+                                        <div class="pr-3">
+                                            <input type="button" class="btn btn-primary" onclick="location.href='/match/show';" value="Find match" />
+                                        </div>
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="location.href='/profile/{{ $user->id }}/edit';" value="Edit Profile" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </nav>
-                        @endcan
+                            </div>
+                        </div>
                     </div>
 
                     <div class="d-flex">
@@ -52,15 +44,15 @@
             </div>
 
             <div class="row mt-4">
-                <h3 style="font-weight: bold">People you liked!</h3>
-            @foreach($likedUsers as $user)
-                    <div class="col-12 pb-3">
-                        <div class="row">
+                <h3 style="font-weight: bold" class="pb-3">People you liked!</h3>
+                @foreach($likedUsers as $user)
+                    <div class="col-12 pb-3" >
+                        <div class="row p-3" style="border: 2px solid #8dbaea; border-radius: 25px;">
                             <div class="col-8">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner" role="listbox">
                                         @foreach($user->pictures as $picture)
-                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                            <div class=" carousel-item {{ $loop->first ? 'active' : '' }}">
                                                 <img class="d-block img-fluid w-100" src="{{ $picture->getUrl() }}"
                                                      alt="{{ $picture->caption }}">
                                                 <div class="carousel-caption d-none d-md-block">

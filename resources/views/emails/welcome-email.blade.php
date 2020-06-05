@@ -1,10 +1,10 @@
 @component('mail::message')
-# Welcome to Janis Davidsons picture sharing platform!
+# Welcome to Dating website!
 
-This is place, where you can upload your pictures and share them with other people.
+This is place, where you can meet other people and find your best match.
 
 @component('mail::button', ['url' => 'janisdavidsons.com'])
-Click here to visit my website
+Click here to visit website
 @endcomponent
 
 Thanks,<br>

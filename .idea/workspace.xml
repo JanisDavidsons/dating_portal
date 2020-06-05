@@ -20,12 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a468bd00-c7cb-4a18-8790-855f23e6bf57" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Services/Match/AffectionRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Match/AffectionService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PicturesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PicturesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProfileFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProfileFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_19_065322_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_19_065322_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_03_144620_create_affection_user_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/welcome-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/welcome-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pictures/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +187,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-pdf-upload" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -243,7 +258,8 @@
       <workItem from="1591208273614" duration="26353000" />
       <workItem from="1591259705938" duration="8389000" />
       <workItem from="1591268120085" duration="20273000" />
-      <workItem from="1591295769690" duration="657000" />
+      <workItem from="1591295769690" duration="13409000" />
+      <workItem from="1591341380028" duration="7069000" />
     </task>
     <task id="LOCAL-00001" summary="Added like button functionality">
       <created>1591006624492</created>
@@ -315,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591287543119</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Commit 12">
+      <created>1591297049013</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591297049013</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +385,8 @@
     <MESSAGE value="Commit 9" />
     <MESSAGE value="Commit 10" />
     <MESSAGE value="Commit 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 11" />
+    <MESSAGE value="Commit 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 12" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2586" y="242" width="824" height="684" key="#CLI_Interpreters" timestamp="1589865220019">
@@ -385,34 +409,35 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2825" y="282" width="345" height="603" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590394612849" />
-    <state x="2665" y="0" width="412" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1589875848945">
+    <state x="2665" y="0" width="412" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1591343539089">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="2665" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591343539089" />
     <state x="2665" y="0" width="412" height="638" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1589875848945" />
     <state x="2427" y="0" width="886" height="1032" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591255434461">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2427" y="0" width="886" height="1032" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591255434461" />
-    <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591270987093">
+    <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591348462855">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591270987093" />
+    <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591348462855" />
     <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1589982943820" />
-    <state x="2419" y="57" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591287542118">
+    <state x="2419" y="57" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591297048667">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2419" y="57" width="912" height="915" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591287542118" />
+    <state x="2419" y="57" width="912" height="915" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591297048667" />
     <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188900296" />
     <state x="2020" y="103" width="1720" height="873" key="DiffContextDialog" timestamp="1591216477959">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2020" y="103" width="1720" height="873" key="DiffContextDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591216477959" />
     <state x="100" y="98" width="1720" height="834" key="DiffContextDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591194228489" />
-    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591280009899">
+    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591305520006">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="1286" y="276" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1590823870749" />
-    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591280009899" />
+    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591305520006" />
     <state x="1286" y="276" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1589383045736" />
     <state x="3206" y="289" width="424" height="543" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1590158419020" />
     <state x="2700" y="415" key="Github.ShareDialog" timestamp="1590392833495">
@@ -427,10 +452,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="261" height="506" key="HiddenNamespacesPopup/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1589874052124" />
-    <state x="2530" y="234" width="689" height="561" key="NewPhpClassDialog" timestamp="1591089321804">
+    <state x="2530" y="234" width="729" height="561" key="NewPhpClassDialog" timestamp="1591343457924">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2530" y="234" width="689" height="561" key="NewPhpClassDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591089321804" />
+    <state x="2530" y="234" width="729" height="561" key="NewPhpClassDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591343457924" />
     <state x="671" y="189" width="543" height="633" key="RollbackChangesDialog" timestamp="1591193942734">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -446,15 +471,15 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1169" y="249" width="639" height="524" key="StructurePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1589380988701" />
-    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591287546381">
+    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591297052600">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591287546381" />
+    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591297052600" />
     <state x="555" y="240" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188906233" />
-    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591261239962">
+    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591348694903">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591261239962" />
+    <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591348694903" />
     <state x="818" y="375" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1032@0.0.1920.1032" timestamp="1591194109765" />
     <state x="2633" y="325" width="484" height="368" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1591019372509">
       <screen x="1920" y="0" width="1920" height="1080" />

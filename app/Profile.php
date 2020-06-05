@@ -11,13 +11,9 @@ class Profile extends Model
         'username',
         'description',
         'facebook',
+        'min_age',
+        'max_age',
     ];
-
-//    public function profileImage(): string
-//    {
-//        $imagePath = ($this->image) ? $this->image : 'defaultPicture/noImageAvailable.png';
-//        return '/storage/' . $imagePath;
-//    }
 
     public function user()
     {

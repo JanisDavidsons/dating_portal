@@ -81,7 +81,13 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
             ]
         );
-        $user->profile()->create([]);
+        $user->profile()->create(
+            [
+                'min_age' => 18,
+                'username' =>$data['userName'],
+                'max_age' => 70
+            ]
+        );
         $user->pictures()->create(
             [
                 'location' => 'pictures/noImageAvailable.png'
@@ -90,3 +96,7 @@ class RegisterController extends Controller
         return $user;
     }
 }
+
+
+
+
