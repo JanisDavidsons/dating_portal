@@ -16,11 +16,11 @@
 
         methods: {
             likeUser() {
-                axios.post('/affection/ ' + this.userId + '/like')
+                axios.post('/match/ ' + this.userId + '/like')
                     .then(response => {
                         console.log(response.data)
                         this.status = !this.status;
-                        window.location = '/match/show';
+                        window.location = '/profiles/show';
                     })
                     .catch(errors => {
                         console.log('error')

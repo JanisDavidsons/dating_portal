@@ -19,11 +19,11 @@
         methods: {
             dislikeUser() {
                 console.log(this.userId)
-                axios.post('/affection/ ' + this.userId + '/dislike')
+                axios.post('/match/ ' + this.userId + '/dislike')
                     .then(response => {
                         console.log(response)
                         this.status = !this.status;
-                        window.location = '/match/show';
+                        window.location = '/profiles/show';
 
                     })
                     .catch(errors => {

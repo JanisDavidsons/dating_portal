@@ -16,13 +16,12 @@
                             <div class="h4">{{ $user->name }}</div>
                         </div>
 
-
                         <div class="col-4">
                             <div>
                                 <div class="d-flex align-items-center">
                                     <div class="row">
                                         <div class="pr-3">
-                                            <input type="button" class="btn btn-primary" onclick="location.href='/match/show';" value="Find match" />
+                                            <input type="button" class="btn btn-primary" onclick="location.href='/profiles/show';" value="Find match" />
                                         </div>
                                         <div>
                                             <input type="button" class="btn btn-primary" onclick="location.href='/profile/{{ $user->id }}/edit';" value="Edit Profile" />
@@ -88,3 +87,7 @@
         @endauth
     </div>
 @endsection
+
+
+
+

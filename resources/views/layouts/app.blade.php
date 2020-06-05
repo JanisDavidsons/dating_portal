@@ -26,7 +26,7 @@
     <div id="app" class="col-9">
         <nav class="navbar navbar-expand-md navbar-light bg-info shadow-lg" style="padding-right: 0 !important;">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/match/show') }}">
+                <a class="navbar-brand d-flex" href="{{ url('/affections/show') }}">
                     <div><img src="/svg/websiteLogo.svg" alt="Web site logo"
                               style="height: 30px; border-right: 2px solid #1b1e21" class="pr-3"></div>
                     <div class="pl-3">Tinder</div>

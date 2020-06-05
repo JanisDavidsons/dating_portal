@@ -1928,10 +1928,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       console.log(this.userId);
-      axios.post('/affection/ ' + this.userId + '/dislike').then(function (response) {
+      axios.post('/match/ ' + this.userId + '/dislike').then(function (response) {
         console.log(response);
         _this.status = !_this.status;
-        window.location = '/match/show';
+        window.location = '/profiles/show';
       })["catch"](function (errors) {
         console.log('error');
 
@@ -1976,10 +1976,10 @@ __webpack_require__.r(__webpack_exports__);
     likeUser: function likeUser() {
       var _this = this;
 
-      axios.post('/affection/ ' + this.userId + '/like').then(function (response) {
+      axios.post('/match/ ' + this.userId + '/like').then(function (response) {
         console.log(response.data);
         _this.status = !_this.status;
-        window.location = '/match/show';
+        window.location = '/profiles/show';
       })["catch"](function (errors) {
         console.log('error');
 

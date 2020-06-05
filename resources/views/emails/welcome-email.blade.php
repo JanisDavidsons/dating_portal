@@ -1,5 +1,5 @@
 @component('mail::message')
-# Welcome to Dating website!
+# Welcome to Dating website {{$user->name}}
 
 This is place, where you can meet other people and find your best match.
 
@@ -10,3 +10,4 @@ Click here to visit website
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
+

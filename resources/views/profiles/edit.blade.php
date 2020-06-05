@@ -11,7 +11,7 @@
                         <div class="d-flex col-12 justify-content-between">
                             <h1>Edit Profile</h1>
                             <div class="pr-3">
-                                <input type="button" class="btn btn-primary" onclick="location.href='/match/show';"
+                                <input type="button" class="btn btn-primary" onclick="location.href='/profiles/show';"
                                        value="Find match"/>
                             </div>
                         </div>

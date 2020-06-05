@@ -2,45 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Affection;
 use App\Services\Match\AffectionRequest;
 use App\Services\Match\AffectionService;
-use App\User;
-use Illuminate\Database\Eloquent\Collection as DatabaseCollection;
-use Illuminate\Support\Facades\DB;
+use App\Services\Match\UserFiterRequest;
+use App\Services\Match\UsersFilterRequest;
+use App\Services\Match\UsersFilterService;
 
 class MatchController extends Controller
 {
-    /**
-     * @var AffectionService
-     */
     private AffectionService $service;
+    private UsersFilterService $filterService;
 
-    public function __construct(AffectionService $service)
+    public function __construct(AffectionService $service, UsersFilterService $filterService)
     {
         $this->middleware('auth');
 
         $this->service = $service;
+        $this->filterService = $filterService;
     }
 
     public function affection(int $userId, string $type)
     {
         $this->service->makeAffection(
-            new AffectionRequest($userId,$type)
+            new AffectionRequest($userId, $type)
         );
     }
 
     public function show()
     {
-        $ageSettings = auth()->user()->profile;
-        $user = auth()->user()
-            ->withoutAuthUser()
-            ->filterAffections()
-             ->withinAge($ageSettings->min_age,$ageSettings->max_age)
-            ->oppositGender()
-            ->inRandomOrder()
-            ->first();
+        $user = $this->filterService->filterUser(
+            new UsersFilterRequest(auth()->user())
+        );
         return view('/profiles/show', compact('user'));
+    }
+
+    public function fullMatch()
+    {
+        $users = $this->filterService->getFullMatch(
+            new UsersFilterRequest(auth()->user())
+        );
+
+        return view('profile/show/affections', compact($users));
     }
 }
 

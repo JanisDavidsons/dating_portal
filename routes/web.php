@@ -24,7 +24,8 @@ Route::post('settings/{minAge}/{maxAge}', 'SettingsController@filterAge');
 
 Auth::routes();
 
-Route::post('affection/{user}/{type}', 'MatchController@affection');
+Route::get('fullmatch', 'MatchController@fullMatch');
+Route::post('match/{user}/{type}', 'MatchController@affection');
 
 Route::post('/pictures', 'PicturesController@store');
 Route::delete('/picture/delete/{id}', 'PicturesController@delete');
@@ -33,4 +34,4 @@ Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/update', 'ProfilesController@update')->name('profile.update');
 
-Route::get('/match/show', 'MatchController@show')->name('match.show');
+Route::get('/profiles/show', 'MatchController@show')->name('profiles.show');
