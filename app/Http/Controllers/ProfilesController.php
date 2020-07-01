@@ -10,7 +10,7 @@ class  ProfilesController extends Controller
     public function index($user)
     {
         $user = auth()->user();
-        $likedUsers = auth()->user()->likedUsers()->get();
+        $likedUsers = auth()->user()->fullMatch()->get();
         $imagesCount = $user->pictures->count();
 
         return view(
@@ -21,7 +21,6 @@ class  ProfilesController extends Controller
 
     public function edit(User $user)
     {
-        $this->authorize('update', $user->profile);
         return view('profiles/edit', compact('user'));
     }
 
@@ -39,7 +38,7 @@ class  ProfilesController extends Controller
         if (request('image')) {
             $imagePath = request()->file('image')->store('pictures');
             auth()->user()->pictures()->create(['location' => $imagePath]);
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 800);
             $image->save();
         }
 

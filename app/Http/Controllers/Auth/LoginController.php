@@ -24,7 +24,7 @@ class LoginController extends Controller
     protected function authenticated()
     {
 
-        return redirect('/profile/' . auth()->id());
+        return redirect('/profiles/show' );
     }
 
     public function __construct()

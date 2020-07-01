@@ -24,7 +24,7 @@ class MatchEmail extends Mailable
     public function build()
     {
         return $this->markdown(
-            'emails.affections-email',
+            'emails.match-email',
             [
                 'user' => $this->user,
                 'matchedUser' => $this->matchedUser

@@ -18,28 +18,6 @@ class PicturesController extends Controller
         return view('pictures/create');
     }
 
-    public function store()
-    {
-//        $data = \request()->validate(
-//            [
-//                'caption' => 'required',
-//                'image' => ['required', 'image']
-//            ]
-//        );
-//
-//        $imagePath = request()->file('image')->store('pictures');
-//        auth()->user()->pictures()->create(
-//            [
-//                'caption' => $data['caption'],
-//                'location' => $imagePath
-//            ]
-//        );
-//        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-//        $image->save();
-
-//        return redirect('/profile/' . auth()->id());
-    }
-
     public function show()
     {
         return view('/pictures/show');

@@ -1,4 +1,5 @@
 <template>
+
     <div class="container">
         <button class="btn btn-primary" style="width: 100px" @click="likeUser" v-text='buttonText'></button>
     </div>

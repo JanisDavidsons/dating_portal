@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container pt-4">
+    <div class="container pt-4" style="height: 100vh !important;">
         @auth()
             <div class="row">
                 <div class="col-12 pb-3">

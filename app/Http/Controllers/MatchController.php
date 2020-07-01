@@ -35,15 +35,6 @@ class MatchController extends Controller
         );
         return view('/profiles/show', compact('user'));
     }
-
-    public function fullMatch()
-    {
-        $users = $this->filterService->getFullMatch(
-            new UsersFilterRequest(auth()->user())
-        );
-
-        return view('profile/show/affections', compact($users));
-    }
 }
 
 

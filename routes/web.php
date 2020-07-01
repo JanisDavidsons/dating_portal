@@ -24,7 +24,6 @@ Route::post('settings/{minAge}/{maxAge}', 'SettingsController@filterAge');
 
 Auth::routes();
 
-Route::get('fullmatch', 'MatchController@fullMatch');
 Route::post('match/{user}/{type}', 'MatchController@affection');
 
 Route::post('/pictures', 'PicturesController@store');

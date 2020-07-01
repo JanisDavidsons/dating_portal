@@ -55,6 +55,12 @@ class User extends Authenticatable
         return $this->hasMany(Affection::class);
     }
 
+//    public function fullMatch()
+//    {
+//        return $this->hasMany(Affection::class,'affection_to', 'id')
+//            ->where('affection_type','=','like');
+//    }
+
     public function scopeWithoutAuthUser($query)
     {
         $query->where('id', '!=', $this->id);
@@ -98,6 +104,24 @@ class User extends Authenticatable
 
         $query->whereIn('id', $likedUsers->all());
     }
+
+    public function match(User $user):void
+    {
+        $this->affections()
+            ->where('affection_to','=', $user->id)
+            ->update(['affection_type' => 'match']);
+    }
+
+    public function scopeFullMatch($query)
+    {
+        $likedUsers = $this->affections()
+            ->where('affection_type','=','match')
+            ->pluck('affection_to');
+
+        $query->whereIn('id', $likedUsers->all());
+    }
+
+
 }
 
 

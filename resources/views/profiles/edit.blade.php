@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container pt-4">
+        @section('find match')
+            <a class="dropdown-item" href='/profiles/show'>Find match</a>
+        @endsection
         <form action="/profile/update" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
@@ -10,10 +13,6 @@
                     <div class="row">
                         <div class="d-flex col-12 justify-content-between">
                             <h1>Edit Profile</h1>
-                            <div class="pr-3">
-                                <input type="button" class="btn btn-primary" onclick="location.href='/profiles/show';"
-                                       value="Find match"/>
-                            </div>
                         </div>
                     </div>
 

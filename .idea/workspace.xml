@@ -20,40 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a468bd00-c7cb-4a18-8790-855f23e6bf57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Events/MatchEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/SendMatchEmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/MatchEmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Match/UsersFilterRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Match/UsersFilterService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/affections/match.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/match-email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/898fceab-3879-4374-bdac-fa0eec4b270d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/background/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/background/background2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/NewUserWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/NewUserWelcomeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PicturesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PicturesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendMatchEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendMatchEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/MatchEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/MatchEmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Match/AffectionService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Match/AffectionService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PictureFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PictureFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/DislikeButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/DislikeButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/LikeButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LikeButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/welcome-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/welcome-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/affections/match.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +190,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/emails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../homework_3" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -219,11 +210,11 @@
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/background" />
       <recent name="$PROJECT_DIR$/resources/views/emails" />
       <recent name="$PROJECT_DIR$/public/storage/profile" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
-      <recent name="$PROJECT_DIR$/database/migrations" />
     </key>
   </component>
   <component name="RunManager">
@@ -273,7 +264,9 @@
       <workItem from="1591259705938" duration="8389000" />
       <workItem from="1591268120085" duration="20273000" />
       <workItem from="1591295769690" duration="13409000" />
-      <workItem from="1591341380028" duration="26504000" />
+      <workItem from="1591341380028" duration="42995000" />
+      <workItem from="1591549285687" duration="94000" />
+      <workItem from="1593588800999" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="Added like button functionality">
       <created>1591006624492</created>
@@ -359,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591349102336</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update 12">
+      <created>1591371294298</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1591371294298</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +408,8 @@
     <MESSAGE value="Commit 11" />
     <MESSAGE value="Commit 12" />
     <MESSAGE value="removed 2020_06_03_144620_create_affection_user_table.php&#10;&#10;added AffectionRequest.php and AffectionService.php service classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed 2020_06_03_144620_create_affection_user_table.php&#10;&#10;added AffectionRequest.php and AffectionService.php service classes" />
+    <MESSAGE value="update 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 12" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2586" y="242" width="824" height="684" key="#CLI_Interpreters" timestamp="1589865220019">
@@ -446,10 +447,10 @@
     </state>
     <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591366937568" />
     <state x="2611" y="102" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1589982943820" />
-    <state x="2419" y="57" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591349101814">
+    <state x="2419" y="57" width="909" height="869" key="CommitChangelistDialog2" timestamp="1591371293330">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2419" y="57" width="912" height="915" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591349101814" />
+    <state x="2419" y="57" width="912" height="915" key="CommitChangelistDialog2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591371293330" />
     <state x="499" y="54" width="909" height="869" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188900296" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1591366605476">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -460,11 +461,11 @@
     </state>
     <state x="2020" y="103" width="1720" height="873" key="DiffContextDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591216477959" />
     <state x="100" y="98" width="1720" height="834" key="DiffContextDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591194228489" />
-    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591305520006">
+    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591549377229">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="1286" y="276" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1590823870749" />
-    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591305520006" />
+    <state x="3206" y="289" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591549377229" />
     <state x="1286" y="276" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1589383045736" />
     <state x="3206" y="289" width="424" height="543" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1590158419020" />
     <state x="2700" y="415" key="Github.ShareDialog" timestamp="1590392833495">
@@ -498,10 +499,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1169" y="249" width="639" height="524" key="StructurePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1589380988701" />
-    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591349121771">
+    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591371298125">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591349121771" />
+    <state x="2475" y="251" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591371298125" />
     <state x="555" y="240" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1591188906233" />
     <state x="2738" y="392" width="367" height="253" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591348694903">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -534,9 +535,10 @@
     <state x="3024" y="245" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591268454659" />
     <state x="1104" y="234" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1589376623892" />
     <state x="3024" y="245" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1590132545264" />
-    <state x="3023" y="235" width="672" height="710" key="search.everywhere.popup" timestamp="1591355998279">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="1103" y="225" width="672" height="679" key="search.everywhere.popup" timestamp="1591429128623">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="1103" y="225" width="672" height="679" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1591429128623" />
     <state x="3023" y="235" width="672" height="710" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591355998279" />
     <state x="1103" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1589381133041" />
     <state x="3023" y="235" width="672" height="710" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1032@1920.0.1920.1080" timestamp="1590138337126" />

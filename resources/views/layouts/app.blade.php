@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
 
@@ -22,11 +22,11 @@
 
 </head>
 <body>
-<div class="row justify-content-center">
+<div class="row justify-content-center area" style="height: 100%;">
     <div id="app" class="col-9">
-        <nav class="navbar navbar-expand-md navbar-light bg-info shadow-lg" style="padding-right: 0 !important;">
+        <nav class="navbar navbar-custom navbar-expand-md navbar-light bg-info shadow-lg" style="padding-right: 0 !important;">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/affections/show') }}">
+                <a class="navbar-brand d-flex" href="{{ url('/profiles/show') }}">
                     <div><img src="/svg/websiteLogo.svg" alt="Web site logo"
                               style="height: 30px; border-right: 2px solid #1b1e21" class="pr-3"></div>
                     <div class="pl-3">Tinder</div>
@@ -70,6 +70,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    @yield('edit profile')
+                                    @yield('find match')
                                     <a class="dropdown-item" href="/profile/{{\Illuminate\Support\Facades\Auth::id()}}">My
                                         profile</a>
 
